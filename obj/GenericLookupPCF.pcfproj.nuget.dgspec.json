@@ -1,25 +1,21 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Shiva\\GenericLookupPCF\\GenericLookupPCF.pcfproj": {}
+    "C:\\Users\\cgier\\source\\repos\\chrizgl\\GenericLookupPCFControl\\GenericLookupPCF.pcfproj": {}
   },
   "projects": {
-    "C:\\Shiva\\GenericLookupPCF\\GenericLookupPCF.pcfproj": {
+    "C:\\Users\\cgier\\source\\repos\\chrizgl\\GenericLookupPCFControl\\GenericLookupPCF.pcfproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Shiva\\GenericLookupPCF\\GenericLookupPCF.pcfproj",
+        "projectUniqueName": "C:\\Users\\cgier\\source\\repos\\chrizgl\\GenericLookupPCFControl\\GenericLookupPCF.pcfproj",
         "projectName": "GenericLookupPCF",
-        "projectPath": "C:\\Shiva\\GenericLookupPCF\\GenericLookupPCF.pcfproj",
-        "packagesPath": "C:\\Users\\sparagi\\.nuget\\packages\\",
-        "outputPath": "C:\\Shiva\\GenericLookupPCF\\obj\\",
+        "projectPath": "C:\\Users\\cgier\\source\\repos\\chrizgl\\GenericLookupPCFControl\\GenericLookupPCF.pcfproj",
+        "packagesPath": "C:\\Users\\cgier\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\cgier\\source\\repos\\chrizgl\\GenericLookupPCFControl\\obj\\",
         "projectStyle": "PackageReference",
-        "fallbackFolders": [
-          "C:\\Microsoft\\Xamarin\\NuGet\\"
-        ],
         "configFilePaths": [
-          "C:\\Users\\sparagi\\AppData\\Roaming\\NuGet\\NuGet.Config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\Xamarin.Offline.config"
+          "C:\\Users\\cgier\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
           "net462"
@@ -30,12 +26,14 @@
         },
         "frameworks": {
           "net462": {
+            "targetAlias": "net462",
             "projectReferences": {}
           }
         }
       },
       "frameworks": {
         "net462": {
+          "targetAlias": "net462",
           "dependencies": {
             "Microsoft.PowerApps.MSBuild.Pcf": {
               "target": "Package",
@@ -46,6 +44,9 @@
       },
       "runtimes": {
         "win": {
+          "#import": []
+        },
+        "win-arm64": {
           "#import": []
         },
         "win-x64": {

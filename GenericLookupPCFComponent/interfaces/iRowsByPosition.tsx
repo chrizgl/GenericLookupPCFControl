@@ -1,4 +1,4 @@
 export default interface iRowsByPosition {
-  position: number;
-  row: any;
+    position: number;
+    row: any;
 }

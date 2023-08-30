@@ -1,0 +1,2 @@
+C:\Users\cgier\source\repos\chrizgl\GenericLookupPCFControl\obj\Debug\GenericLookupPCF.pcfproj.AssemblyReference.cache
+C:\Users\cgier\source\repos\chrizgl\GenericLookupPCFControl\obj\Debug\GenericLookupPCF.pcfproj.CoreCompileInputs.cache
