@@ -6,9 +6,6 @@
     <property name="ConfigFileName" display-name-key="ConfigFileName" description-key="ConfigFileName" of-type="SingleLine.Text" usage="input" required="false" />
     <resources>
       <code path="index.ts" order="1"/>
-      <css path="./../node_modules/react-tabulator/lib/css/semantic-ui/tabulator_semantic-ui.css" order="3" />
-      <css path="css/styles.css" order="2" />
-      <css path="css/flyout.css" order="2" />
       <img path="src/link.png"  />
       <img path="src/error.png"  />
       <img path="src/warning.png"  />

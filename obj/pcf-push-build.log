@@ -1,95 +1,58 @@
 ﻿
   Wiederherzustellende Projekte werden ermittelt...
-  "C:\Users\cgier\source\repos\chrizgl\GenericLookupPCFControl\GenericLookupPCF.pcfproj" wiederhergestellt (in "844 ms.").
-  "C:\Users\cgier\source\repos\chrizgl\GenericLookupPCFControl\obj\PowerAppsTools_cgsol\PowerAppsTools_cgsol.cdsproj" wiederhergestellt (in "980 ms.").
+  Alle Projekte sind für die Wiederherstellung auf dem neuesten Stand.
   
   > pcf-project@1.0.0 clean
   > pcf-scripts clean --noColor --buildMode development --outDir C:\Users\cgier\source\repos\chrizgl\GenericLookupPCFControl\out\controls --buildSource MSBuild
   
-  [20:06:23] [clean]  Initializing...
-  [20:06:23] [clean]  Cleaning build outputs...
-  [20:06:23] [clean]  Succeeded
+  [19:51:59] [clean]  Initializing...
+  [19:51:59] [clean]  Cleaning build outputs...
+  [19:51:59] [clean]  Succeeded
   Cleaning output directory: bin\Debug\, Intermediate directory: obj\Debug\ and Solution Packager working directory: obj\Debug\
   Removing log file: obj\Debug\SolutionPackager.log and generated solution package: bin\Debug\PowerAppsTools_cgsol.zip
-  npm WARN ERESOLVE overriding peer dependency
-  npm WARN While resolving: react-tag-autocomplete@5.13.1
-  npm WARN Found: react@18.2.0
-  npm WARN node_modules/react
-  npm WARN   react@"^18.2.0" from the root project
-  npm WARN   64 more (@fluentui/foundation-legacy, @fluentui/react, ...)
-  npm WARN 
-  npm WARN Could not resolve dependency:
-  npm WARN peer react@"^15.0.0 || ^16.0.0" from react-tag-autocomplete@5.13.1
-  npm WARN node_modules/react-tabulator/node_modules/react-tag-autocomplete
-  npm WARN   react-tag-autocomplete@"^5.7.1" from react-tabulator@0.18.1
-  npm WARN   node_modules/react-tabulator
-  npm WARN 
-  npm WARN Conflicting peer dependency: react@16.14.0
-  npm WARN node_modules/react
-  npm WARN   peer react@"^15.0.0 || ^16.0.0" from react-tag-autocomplete@5.13.1
-  npm WARN   node_modules/react-tabulator/node_modules/react-tag-autocomplete
-  npm WARN     react-tag-autocomplete@"^5.7.1" from react-tabulator@0.18.1
-  npm WARN     node_modules/react-tabulator
-  npm WARN ERESOLVE overriding peer dependency
-  npm WARN While resolving: react-tag-autocomplete@5.13.1
-  npm WARN Found: react-dom@18.2.0
-  npm WARN node_modules/react-dom
-  npm WARN   react-dom@"^18.2.0" from the root project
-  npm WARN   51 more (@fluentui/react, @fluentui/react-accordion, ...)
-  npm WARN 
-  npm WARN Could not resolve dependency:
-  npm WARN peer react-dom@"^15.0.0 || ^16.0.0" from react-tag-autocomplete@5.13.1
-  npm WARN node_modules/react-tabulator/node_modules/react-tag-autocomplete
-  npm WARN   react-tag-autocomplete@"^5.7.1" from react-tabulator@0.18.1
-  npm WARN   node_modules/react-tabulator
-  npm WARN 
-  npm WARN Conflicting peer dependency: react-dom@16.14.0
-  npm WARN node_modules/react-dom
-  npm WARN   peer react-dom@"^15.0.0 || ^16.0.0" from react-tag-autocomplete@5.13.1
-  npm WARN   node_modules/react-tabulator/node_modules/react-tag-autocomplete
-  npm WARN     react-tag-autocomplete@"^5.7.1" from react-tabulator@0.18.1
-  npm WARN     node_modules/react-tabulator
-  
-  up to date, audited 908 packages in 2s
-  
-  163 packages are looking for funding
-    run `npm fund` for details
-  
-  found 0 vulnerabilities
   
   > pcf-project@1.0.0 build
   > pcf-scripts build --noColor --buildMode development --outDir C:\Users\cgier\source\repos\chrizgl\GenericLookupPCFControl\out\controls --buildSource MSBuild
   
-  [20:06:32] [build]  Initializing...
-  [20:06:32] [build]  Validating manifest...
-  [20:06:32] [build]  Validating control...
-  [20:06:32] [build]  Generating manifest types...
+  [19:52:04] [build]  Initializing...
+  [19:52:04] [build]  Validating manifest...
+  [19:52:04] [build]  Validating control...
+  [19:52:05] [build]  Generating manifest types...
   DeprecationWarning: 'createInterfaceDeclaration' has been deprecated since v4.8.0. Decorators are no longer supported for this function. Callers should switch to an overload that does not accept a 'decorators' parameter.
-  [20:06:32] [build]  Generating design types...
-  [20:06:32] [build]  Running ESLint...
+  [19:52:05] [build]  Generating design types...
+  [19:52:05] [build]  Running ESLint...
 EXEC : warning : React version not specified in eslint-plugin-react settings. See https://github.com/jsx-eslint/eslint-plugin-react#configuration . [C:\Users\cgier\source\repos\chrizgl\GenericLookupPCFControl\GenericLookupPCF.pcfproj]
-  [20:06:34] [build]  Compiling and bundling control...
+  [19:52:07] [build]  Compiling and bundling control...
   [BABEL] Note: The code generator has deoptimised the styling of C:\Users\cgier\source\repos\chrizgl\GenericLookupPCFControl\node_modules\react-dom\cjs\react-dom.development.js as it exceeds the max of 500KB.
   [BABEL] Note: The code generator has deoptimised the styling of C:\Users\cgier\source\repos\chrizgl\GenericLookupPCFControl\node_modules\tabulator-tables\dist\js\tabulator_esm.js as it exceeds the max of 500KB.
+  [BABEL] Note: The code generator has deoptimised the styling of C:\Users\cgier\source\repos\chrizgl\GenericLookupPCFControl\node_modules\@fluentui\react-icons\lib\icons\chunk-3.js as it exceeds the max of 500KB.
+  [BABEL] Note: The code generator has deoptimised the styling of C:\Users\cgier\source\repos\chrizgl\GenericLookupPCFControl\node_modules\@fluentui\react-icons\lib\sizedIcons\chunk-1.js as it exceeds the max of 500KB.
+  [BABEL] Note: The code generator has deoptimised the styling of C:\Users\cgier\source\repos\chrizgl\GenericLookupPCFControl\node_modules\@fluentui\react-icons\lib\sizedIcons\chunk-8.js as it exceeds the max of 500KB.
+  [BABEL] Note: The code generator has deoptimised the styling of C:\Users\cgier\source\repos\chrizgl\GenericLookupPCFControl\node_modules\@fluentui\react-icons\lib\sizedIcons\chunk-12.js as it exceeds the max of 500KB.
+  [BABEL] Note: The code generator has deoptimised the styling of C:\Users\cgier\source\repos\chrizgl\GenericLookupPCFControl\node_modules\@fluentui\react-icons\lib\icons\chunk-1.js as it exceeds the max of 500KB.
+  [BABEL] Note: The code generator has deoptimised the styling of C:\Users\cgier\source\repos\chrizgl\GenericLookupPCFControl\node_modules\@fluentui\react-icons\lib\icons\chunk-2.js as it exceeds the max of 500KB.
+  [BABEL] Note: The code generator has deoptimised the styling of C:\Users\cgier\source\repos\chrizgl\GenericLookupPCFControl\node_modules\@fluentui\react-icons\lib\sizedIcons\chunk-2.js as it exceeds the max of 500KB.
+  [BABEL] Note: The code generator has deoptimised the styling of C:\Users\cgier\source\repos\chrizgl\GenericLookupPCFControl\node_modules\@fluentui\react-icons\lib\sizedIcons\chunk-4.js as it exceeds the max of 500KB.
+  [BABEL] Note: The code generator has deoptimised the styling of C:\Users\cgier\source\repos\chrizgl\GenericLookupPCFControl\node_modules\@fluentui\react-icons\lib\sizedIcons\chunk-7.js as it exceeds the max of 500KB.
+  [BABEL] Note: The code generator has deoptimised the styling of C:\Users\cgier\source\repos\chrizgl\GenericLookupPCFControl\node_modules\@fluentui\react-icons\lib\sizedIcons\chunk-11.js as it exceeds the max of 500KB.
+  [BABEL] Note: The code generator has deoptimised the styling of C:\Users\cgier\source\repos\chrizgl\GenericLookupPCFControl\node_modules\@fluentui\react-icons\lib\sizedIcons\chunk-9.js as it exceeds the max of 500KB.
+  [BABEL] Note: The code generator has deoptimised the styling of C:\Users\cgier\source\repos\chrizgl\GenericLookupPCFControl\node_modules\@fluentui\react-icons\lib\sizedIcons\chunk-5.js as it exceeds the max of 500KB.
+  [BABEL] Note: The code generator has deoptimised the styling of C:\Users\cgier\source\repos\chrizgl\GenericLookupPCFControl\node_modules\@fluentui\react-icons\lib\sizedIcons\chunk-10.js as it exceeds the max of 500KB.
+  [BABEL] Note: The code generator has deoptimised the styling of C:\Users\cgier\source\repos\chrizgl\GenericLookupPCFControl\node_modules\@fluentui\react-icons\lib\sizedIcons\chunk-6.js as it exceeds the max of 500KB.
+  [BABEL] Note: The code generator has deoptimised the styling of C:\Users\cgier\source\repos\chrizgl\GenericLookupPCFControl\node_modules\@fluentui\react-icons\lib\sizedIcons\chunk-13.js as it exceeds the max of 500KB.
   [Webpack stats]:
-  asset bundle.js 2.43 MiB [emitted] (name: main)
-  orphan modules 2.2 MiB [orphan] 905 modules
+  asset bundle.js 2.95 MiB [emitted] (name: main)
+  orphan modules 14 MiB [orphan] 2133 modules
   runtime modules 1.29 KiB 7 modules
-  cacheable modules 2.09 MiB
-    modules by path ./node_modules/@fluentui/ 310 KiB 125 modules
-    modules by path ./node_modules/react-loader-spinner/dist/esm/ 124 KiB 37 modules
-    modules by path ./node_modules/react-tabulator/ 69.6 KiB 14 modules
-    modules by path ./node_modules/styled-tools/dist/es/*.js 9.28 KiB 8 modules
-    modules by path ./node_modules/react-dom/ 862 KiB 5 modules
-    modules by path ./node_modules/prop-types/ 26.6 KiB 5 modules
-    modules by path ./node_modules/@emotion/ 20.8 KiB 4 modules
-    modules by path ./GenericLookupPCFComponent/ 33.1 KiB 2 modules
-    modules by path ./node_modules/react/ 94.5 KiB 2 modules
-    modules by path ./node_modules/react-is/ 7.57 KiB 2 modules
-    + 9 modules
-  webpack 5.88.2 compiled successfully in 11561 ms
-  [20:06:47] [build]  Generating build outputs...
-  [20:06:47] [build]  Succeeded
+  cacheable modules 2.4 MiB
+    modules by path ./node_modules/ 2.36 MiB 359 modules
+    modules by path ./GenericLookupPCFComponent/ 34 KiB
+      ./GenericLookupPCFComponent/index.ts 4.49 KiB [built] [code generated]
+      ./GenericLookupPCFComponent/components/CalloutControlComponent.tsx 27.9 KiB [built] [code generated]
+      ./GenericLookupPCFComponent/components/StylesV9.tsx 1.65 KiB [built] [code generated]
+  webpack 5.88.2 compiled successfully in 31429 ms
+  [19:52:39] [build]  Generating build outputs...
+  [19:52:39] [build]  Succeeded
   Running Solution Packager to build package type: Unmanaged bin\Debug\PowerAppsTools_cgsol.zip
   Solution: bin\Debug\PowerAppsTools_cgsol.zip generated.
   Solution Package Type: Unmanaged generated.

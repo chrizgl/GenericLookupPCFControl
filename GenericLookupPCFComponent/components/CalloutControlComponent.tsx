@@ -10,77 +10,24 @@ import iCreateField from '../interfaces/iCreateField';
 import iField from '../interfaces/iField';
 import { ReactTabulator } from 'react-tabulator';
 import { Bars } from 'react-loader-spinner';
-import { Callout, getTheme, FontWeights, mergeStyleSets } from '@fluentui/react';
+import { Callout, StackItem } from '@fluentui/react';
 import iView from '../interfaces/iView';
-
-const theme = getTheme();
-const styles: any = mergeStyleSets({
-    buttonArea: {
-        verticalAlign: 'top',
-        display: 'inline-block',
-        textAlign: 'center',
-        margin: '0 100px',
-        minWidth: 130,
-        height: 32,
-    },
-    gridDivLeft1: {
-        float: 'left',
-        width: '100%',
-    },
-    gridDivRight1: {
-        float: 'right',
-        width: '16px%',
-        marginRight: '15px',
-        marginTop: '5px',
-    },
-
-    callout: {
-        maxWidth: 600,
-    },
-    header: {
-        padding: '18px 24px 12px',
-    },
-    title: [
-        theme.fonts.xLarge,
-        {
-            margin: 0,
-            fontWeight: FontWeights.semilight,
-        },
-    ],
-    inner: {
-        height: '100%',
-        padding: '0 24px 20px',
-    },
-    actions: {
-        position: 'relative',
-        marginTop: 20,
-        width: '100%',
-        whiteSpace: 'nowrap',
-    },
-    focusControl: {},
-    focusControl1: {},
-    focusControl2: {},
-    focusControl3: {},
-    focusControl4: {},
-    focusControl5: {},
-    focusControl6: {},
-    focusControl7: {},
-    subtext: [
-        theme.fonts.small,
-        {
-            margin: 0,
-            fontWeight: FontWeights.semilight,
-        },
-    ],
-    link: [
-        theme.fonts.medium,
-        {
-            color: theme.palette.neutralPrimary,
-        },
-    ],
-});
-
-class CalloutControlComponent extends React.Component<iPropsInput> {
+import { useStyles } from './StylesV9';
+import {
+    makeStyles,
+    mergeClasses,
+    Button,
+    FluentProvider,
+    webLightTheme,
+    Input,
+    InputProps,
+    useId,
+    shorthands,
+    tokens,
+    ColorPaletteTokens,
+    Overflow,
+} from '@fluentui/react-components';
+class CalloutControlComponent extends React.PureComponent<iPropsInput> {
     ref: any = null;
     _context: ComponentFramework.Context<IInputs>;
     _tmpField: iCreateField;
@@ -120,6 +67,7 @@ class CalloutControlComponent extends React.Component<iPropsInput> {
         selectedView: 0,
         showSpinner: false,
     };
+    private _useStyles = useStyles;
 
     constructor(props: iPropsInput) {
         super(props);
@@ -495,6 +443,11 @@ class CalloutControlComponent extends React.Component<iPropsInput> {
     };
 
     public render() {
+        const classes = this._useStyles();
+        const stackClasses = mergeClasses(classes.stack, classes.stackHorizontal);
+        const overflowClass = mergeClasses(classes.overflow, classes.stackitem);
+        const inputClass = mergeClasses(classes.input, classes.stackitem);
+        const iconClass = mergeClasses(classes.icon, classes.stackitem);
         const options = {
             layoutColumnsOnNewData: true,
             tooltips: true, //show tool tips on cells
@@ -507,225 +460,15 @@ class CalloutControlComponent extends React.Component<iPropsInput> {
             placeholder: 'No Data Available',
         };
         return (
-            <div>
+            <FluentProvider theme={webLightTheme}>
                 <div>
-                    <div className='egmtCreateDivMain' id='divCreateDetail'>
-                        <div className='egmtCreateDivWrapper'>
-                            <div role='presentation' className='egmtCreateDiv'>
-                                <div role='presentation' className='egmtCreateDiv2'>
-                                    <div role='presentation' className='egmtCreateDiv9'>
-                                        <div className={styles[this._tmpField?.focusControl ?? 'focusControl']}>
-                                            <span className='gridLookupContainer'>
-                                                <div>
-                                                    <div className='glAutocomplete' style={{ width: '100%' }}>
-                                                        <div className='glDisplayFlex'>
-                                                            <div className='gridDivLeft' id={this._divLookupId}>
-                                                                <div style={{ display: 'inline' }} id='divMapped' className='glDivMapped'>
-                                                                    <ul className='glUL'>
-                                                                        <li className='glLi'>
-                                                                            <div role='link' className='glLinkLiv'>
-                                                                                <div>
-                                                                                    <span className={this._entitySymbol}></span>
-                                                                                </div>
-                                                                                <div className='glText'>
-                                                                                    <a
-                                                                                        className='glLink'
-                                                                                        id={this._linkLookupText}
-                                                                                        href='#'
-                                                                                        title={this.state.lookupText}
-                                                                                        onClick={(e) => {
-                                                                                            this.OnTextClick(e);
-                                                                                        }}
-                                                                                    >
-                                                                                        {this.state.lookupText}
-                                                                                    </a>
-                                                                                </div>
-                                                                            </div>
-                                                                            <button
-                                                                                type='button'
-                                                                                className='gl_button_close'
-                                                                                onClick={() => {
-                                                                                    this.SetEditability(true);
-                                                                                }}
-                                                                            >
-                                                                                <span className='gl_span'>
-                                                                                    <span className='gl_span_span'>
-                                                                                        <span className='gl_span_span_icon symbolFont Cancel-symbol'></span>
-                                                                                    </span>
-                                                                                </span>
-                                                                            </button>
-                                                                        </li>
-                                                                    </ul>
-                                                                </div>
-                                                            </div>
-                                                            <div className='gridDivLeft' id={this._divTextbox} style={{ display: 'none' }}>
-                                                                <input
-                                                                    id={this._txtSearchId}
-                                                                    type='text'
-                                                                    className='glInput'
-                                                                    name={this._txtSearchId}
-                                                                    autoComplete='off'
-                                                                    placeholder={this._placeHolder}
-                                                                    title={this._placeHolder}
-                                                                ></input>
-                                                            </div>
-                                                            <div className='gridDivRight'>
-                                                                <button
-                                                                    id='btnSearch'
-                                                                    className='gl_button'
-                                                                    onClick={() => {
-                                                                        this.OnSearchClick();
-                                                                    }}
-                                                                >
-                                                                    <span className='gl_span'>
-                                                                        <span className='gl_span_span'>
-                                                                            <span className='gl_span_span_icon symbolFont SearchButton-symbol'></span>
-                                                                        </span>
-                                                                    </span>
-                                                                </button>
-                                                            </div>
-                                                        </div>
-
-                                                        <div>
-                                                            <div>
-                                                                {this.state.calloutVisible && (
-                                                                    <Callout
-                                                                        className={styles.callout}
-                                                                        ariaLabelledBy='callout-label'
-                                                                        ariaDescribedBy='callout-description'
-                                                                        role='alertdialog'
-                                                                        gapSpace={0}
-                                                                        target={`.${styles[this._tmpField.focusControl ?? 'focusControl']}`}
-                                                                        onDismiss={this.CloseCallOut}
-                                                                        setInitialFocus
-                                                                    >
-                                                                        <table className='glTable'>
-                                                                            <thead className='glThead'>
-                                                                                <td colSpan={2}>
-                                                                                    <table>
-                                                                                        <tr>
-                                                                                            <td>
-                                                                                                {this._tmpField
-                                                                                                    .openSearchPanelOnKeyDown && (
-                                                                                                    <input
-                                                                                                        className='glDummyTextBox'
-                                                                                                        id={this._txtDummyId}
-                                                                                                        onFocus={() => {
-                                                                                                            document
-                                                                                                                .getElementById(
-                                                                                                                    this._txtSearchId,
-                                                                                                                )
-                                                                                                                ?.focus();
-                                                                                                        }}
-                                                                                                    ></input>
-                                                                                                )}
-                                                                                            </td>
-                                                                                            <td>
-                                                                                                {this._recordsThreshHoldLimit > 0 &&
-                                                                                                    this.state.data.length >=
-                                                                                                        this._recordsThreshHoldLimit && (
-                                                                                                        <div className='WarningToopBarDiv'>
-                                                                                                            <div className='warningIcon'></div>
-                                                                                                            <div>
-                                                                                                                More than
-                                                                                                                {this._tmpField.recordsThreshHoldLimit?.toString()}{' '}
-                                                                                                                records found. If you do not
-                                                                                                                find desired result, narrow
-                                                                                                                down your search.
-                                                                                                            </div>
-                                                                                                        </div>
-                                                                                                    )}
-                                                                                            </td>
-                                                                                        </tr>
-                                                                                    </table>
-                                                                                </td>
-                                                                            </thead>
-
-                                                                            {this.state.showSpinner && (
-                                                                                <tr>
-                                                                                    <td colSpan={2} align='center' className='tdSpinner'>
-                                                                                        <Bars color='#00BFFF' height={40} width={40} />
-                                                                                    </td>
-                                                                                </tr>
-                                                                            )}
-
-                                                                            <tr>
-                                                                                <td colSpan={2} className='tdGrid'>
-                                                                                    {!this.state.showSpinner && (
-                                                                                        <ReactTabulator
-                                                                                            options={options}
-                                                                                            ref={(ref: any) => (this.ref = ref)}
-                                                                                            columns={this._columns}
-                                                                                            data={this.state.data}
-                                                                                            data-custom-attr='test-custom-attribute'
-                                                                                            className='custom-css-class-lookup'
-                                                                                        />
-                                                                                    )}
-                                                                                </td>
-                                                                            </tr>
-
-                                                                            <tr className='glFooter'>
-                                                                                <td align='left'>
-                                                                                    {this._tmpField.newRecordText && (
-                                                                                        <button
-                                                                                            id='btnSearch'
-                                                                                            className='gl_button_new'
-                                                                                            onClick={() => {
-                                                                                                this.OnNewClick();
-                                                                                            }}
-                                                                                        >
-                                                                                            <span className='gl_span'>
-                                                                                                <span className='gl_span_span'>
-                                                                                                    <span className='glNewFont glFont600 gl_span_span_icon symbolFont New-symbol'></span>
-                                                                                                </span>
-                                                                                                <span className='glFont600 editable_grid_actions_span_span_label'>
-                                                                                                    {this._tmpField.newRecordText ?? 'New'}
-                                                                                                </span>
-                                                                                            </span>
-                                                                                        </button>
-                                                                                    )}
-                                                                                </td>
-                                                                                <td align='right'>
-                                                                                    <select
-                                                                                        className='glViewSelectList'
-                                                                                        id={this._ddlView}
-                                                                                        onChange={() => {
-                                                                                            this.OnViewChange();
-                                                                                        }}
-                                                                                    >
-                                                                                        {this._tmpField.lookUpCol?.views?.map(
-                                                                                            (view: iView) => (
-                                                                                                <option
-                                                                                                    value={view.id}
-                                                                                                    selected={view.isDefault}
-                                                                                                >
-                                                                                                    {view.name}
-                                                                                                </option>
-                                                                                            ),
-                                                                                        )}
-                                                                                    </select>
-                                                                                </td>
-                                                                            </tr>
-                                                                        </table>
-                                                                    </Callout>
-                                                                )}
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </span>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
+                    <div>
+                        <div className={classes.stackVertical} id='divCreateDetail'>
+                            <div className={classes.stackitem}>Hallo</div>
                         </div>
                     </div>
-                    <div className='egmtValidationDivHide' id={this._divValidations}>
-                        <div className='errorIcon'></div>
-                        <span className='egmtValidationMsg'>{this._tmpField.validation?.message}</span>
-                    </div>
                 </div>
-            </div>
+            </FluentProvider>
         );
     }
 }
