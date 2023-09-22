@@ -12,9 +12,7 @@
         "@fluentui/react": "^8.111.1",
         "@fluentui/react-components": "^9.30.1",
         "react": "^18.2.0",
-        "react-dom": "^18.2.0",
-        "react-loader-spinner": "^5.4.5",
-        "react-tabulator": "^0.18.1"
+        "react-dom": "^18.2.0"
     },
     "devDependencies": {
         "@microsoft/eslint-plugin-power-apps": "^0.2.11",
