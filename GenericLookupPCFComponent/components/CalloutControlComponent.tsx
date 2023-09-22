@@ -1,4 +1,5 @@
 <<<<<<< HEAD
+<<<<<<< HEAD
 /* eslint-disable react/jsx-key */
 /* eslint-disable @typescript-eslint/no-array-constructor */
 /* eslint-disable @typescript-eslint/no-this-alias */
@@ -35,6 +36,8 @@ class CalloutControlComponent extends React.PureComponent<iPropsInput> {
     _currentFocus = -1;
     _divSearchForm = 'divSearchForm';
 =======
+=======
+>>>>>>> parent of a68799b (conflicts resolved and first push)
 import * as React from "react";
 import * as ReactDOM from "react-dom";
 import { IInputs } from "../generated/ManifestTypes";
@@ -51,6 +54,7 @@ import {
   mergeStyleSets,
 } from "office-ui-fabric-react";
 import iView from "../interfaces/iView";
+<<<<<<< HEAD
 
 const theme = getTheme();
 const styles: any = mergeStyleSets({
@@ -163,6 +167,103 @@ class CalloutControlComponent extends React.Component<iPropsInput> {
     };
     private _useStyles = useStyles;
 =======
+=======
+
+const theme = getTheme();
+const styles: any = mergeStyleSets({
+  buttonArea: {
+    verticalAlign: "top",
+    display: "inline-block",
+    textAlign: "center",
+    margin: "0 100px",
+    minWidth: 130,
+    height: 32,
+  },
+  gridDivLeft1: {
+    float: "left",
+    width: "100%",
+  },
+  gridDivRight1: {
+    float: "right",
+    width: "16px%",
+    marginRight: "15px",
+    marginTop: "5px",
+  },
+
+  callout: {
+    maxWidth: 600,
+  },
+  header: {
+    padding: "18px 24px 12px",
+  },
+  title: [
+    theme.fonts.xLarge,
+    {
+      margin: 0,
+      fontWeight: FontWeights.semilight,
+    },
+  ],
+  inner: {
+    height: "100%",
+    padding: "0 24px 20px",
+  },
+  actions: {
+    position: "relative",
+    marginTop: 20,
+    width: "100%",
+    whiteSpace: "nowrap",
+  },
+  focusControl: {},
+  focusControl1: {},
+  focusControl2: {},
+  focusControl3: {},
+  focusControl4: {},
+  focusControl5: {},
+  focusControl6: {},
+  focusControl7: {},
+  subtext: [
+    theme.fonts.small,
+    {
+      margin: 0,
+      fontWeight: FontWeights.semilight,
+    },
+  ],
+  link: [
+    theme.fonts.medium,
+    {
+      color: theme.palette.neutralPrimary,
+    },
+  ],
+});
+
+class CalloutControlComponent extends React.Component<iPropsInput> {
+  ref: any = null;
+  _context: ComponentFramework.Context<IInputs>;
+  _tmpField: iCreateField;
+  _currentFocus = -1;
+  _divSearchForm = "divSearchForm";
+
+  _SearchText = "";
+  _columns: any[] = [];
+  _data: any[] = [];
+  _recordsThreshHoldLimit: number = 0;
+
+  _originalLookupId: string = "";
+  _originalLookupText: string = "";
+  _placeHolder: string = "Search in ";
+  _entityId: string = "";
+  _entityTypeName: string = "";
+
+  _txtSearchId = "txtSearch";
+  _divLookupId = "divLookup";
+  _txtDummyId = "txtDummy";
+  _ddlView = "ddlView";
+  _divValidations = "divValidations";
+  _linkLookupText = "linkLookupText";
+  _divTextbox = "divTextbox";
+  _entitySymbol = "";
+
+>>>>>>> parent of a68799b (conflicts resolved and first push)
   state = {
     expandValidations: false,
     isLookupOpen: false,
@@ -176,6 +277,9 @@ class CalloutControlComponent extends React.Component<iPropsInput> {
     selectedView: 0,
     showSpinner: false,
   };
+<<<<<<< HEAD
+>>>>>>> parent of a68799b (conflicts resolved and first push)
+=======
 >>>>>>> parent of a68799b (conflicts resolved and first push)
 
   constructor(props: iPropsInput) {
@@ -234,6 +338,7 @@ class CalloutControlComponent extends React.Component<iPropsInput> {
               lookupId: tmpLookupId,
               lookupText: tmpLookupText,
             });
+<<<<<<< HEAD
 <<<<<<< HEAD
 
             // eslint-disable-next-line @typescript-eslint/no-array-constructor
@@ -527,10 +632,15 @@ class CalloutControlComponent extends React.Component<iPropsInput> {
                 </div>
             </FluentProvider>
 =======
+=======
+>>>>>>> parent of a68799b (conflicts resolved and first push)
           },
           function (error) {
             console.log(error.message);
           }
+<<<<<<< HEAD
+>>>>>>> parent of a68799b (conflicts resolved and first push)
+=======
 >>>>>>> parent of a68799b (conflicts resolved and first push)
         );
     }
