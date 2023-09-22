@@ -1,0 +1,37 @@
+﻿
+  Wiederherzustellende Projekte werden ermittelt...
+  Alle Projekte sind für die Wiederherstellung auf dem neuesten Stand.
+  
+  > pcf-project@1.0.0 clean
+  > pcf-scripts clean --noColor --buildMode development --outDir C:\Users\cgier\source\repos\chrizgl\GenericLookupPCFControl\out\controls --buildSource MSBuild
+  
+  [21:32:20] [clean]  Initializing...
+  [21:32:20] [clean]  Cleaning build outputs...
+  [21:32:20] [clean]  Succeeded
+  Cleaning output directory: bin\Debug\, Intermediate directory: obj\Debug\ and Solution Packager working directory: obj\Debug\
+  Removing log file: obj\Debug\SolutionPackager.log and generated solution package: bin\Debug\PowerAppsTools_cgsol.zip
+  
+  > pcf-project@1.0.0 build
+  > pcf-scripts build --noColor --buildMode development --outDir C:\Users\cgier\source\repos\chrizgl\GenericLookupPCFControl\out\controls --buildSource MSBuild
+  
+  [21:32:29] [build]  Initializing...
+  [21:32:29] [build]  Validating manifest...
+  [21:32:29] [build]  Validating control...
+  [21:32:30] [build]  Generating manifest types...
+  DeprecationWarning: 'createInterfaceDeclaration' has been deprecated since v4.8.0. Decorators are no longer supported for this function. Callers should switch to an overload that does not accept a 'decorators' parameter.
+  [21:32:30] [build]  Generating design types...
+  [21:32:30] [build]  Running ESLint...
+EXEC : warning : React version not specified in eslint-plugin-react settings. See https://github.com/jsx-eslint/eslint-plugin-react#configuration . [C:\Users\cgier\source\repos\chrizgl\GenericLookupPCFControl\GenericLookupPCF.pcfproj]
+  [21:32:33] [build]  Compiling and bundling control...
+  [BABEL] Note: The code generator has deoptimised the styling of C:\Users\cgier\source\repos\chrizgl\GenericLookupPCFControl\node_modules\react-dom\cjs\react-dom.development.js as it exceeds the max of 500KB.
+  [BABEL] Note: The code generator has deoptimised the styling of C:\Users\cgier\source\repos\chrizgl\GenericLookupPCFControl\node_modules\tabulator-tables\dist\js\tabulator_esm.js as it exceeds the max of 500KB.
+  [Webpack stats]:
+  asset bundle.js 5.83 MiB [emitted] (name: main)
+  1130 modules
+  webpack 5.88.2 compiled successfully in 15706 ms
+  [21:32:50] [build]  Generating build outputs...
+  [21:32:50] [build]  Succeeded
+  Running Solution Packager to build package type: Unmanaged bin\Debug\PowerAppsTools_cgsol.zip
+  Solution: bin\Debug\PowerAppsTools_cgsol.zip generated.
+  Solution Package Type: Unmanaged generated.
+  Completed intermiediate files clean up.

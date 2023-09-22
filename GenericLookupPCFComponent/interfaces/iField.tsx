@@ -1,4 +1,4 @@
 export default interface iField {
-  name?: string;
-  displayText?: string;
+    name?: string;
+    displayText?: string;
 }
