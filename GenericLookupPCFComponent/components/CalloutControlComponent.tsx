@@ -3,6 +3,7 @@ import { IInputs } from '../generated/ManifestTypes';
 import iPropsInput from '../interfaces/iPropsInput';
 import iCreateField from '../interfaces/iCreateField';
 // import GetSampleConfig from '../sampledata/config';
+// was soll damit geschehen?
 import iField from '../interfaces/iField';
 import { ReactTabulator } from 'react-tabulator';
 import { Oval } from 'react-loader-spinner';
@@ -144,6 +145,7 @@ class CalloutControlComponent extends React.Component<iPropsInput> {
     }
 
     LoadInitialData = () => {
+        console.log('LoadInitialData called');
         const thisRef = this;
 
         if (this._entityId.length > 0) {
@@ -172,9 +174,11 @@ class CalloutControlComponent extends React.Component<iPropsInput> {
         this.setState({ filterText: event.target.value });
     };
     OnLookupUpClick = (event: any, tmpField: iCreateField) => {
+        console.log('OnLookupUpClick called');
         this.OpenLookupDialog(tmpField);
     };
     OpenLookupDialog = (tmpColDef?: iCreateField) => {
+        console.log('OpenLookupDialog called');
         this.setState({
             isLookupOpen: true,
             lookupField: tmpColDef?.lookUpCol,
@@ -182,6 +186,7 @@ class CalloutControlComponent extends React.Component<iPropsInput> {
         });
     };
     CloseLookupDialog = (lookupObj: any) => {
+        console.log('CloseLookupDialog called');
         this.setState({
             isLookupOpen: false,
             selectedLookupField: 'unknown',
@@ -189,10 +194,12 @@ class CalloutControlComponent extends React.Component<iPropsInput> {
     };
 
     GetLookupText = (tmpField: iCreateField) => {
+        console.log('GetLookupText called');
         return '---';
     };
 
     LoadColumns = () => {
+        console.log('LoadColumns called');
         this._columns.push({
             formatter: (cell: any) => this.SelectFormatter(cell),
             align: 'center',
@@ -210,7 +217,9 @@ class CalloutControlComponent extends React.Component<iPropsInput> {
             this._columns.push(tmpCol);
         });
     };
+    // von hier aus select und in lookup schreiben?
     SelectFormatter = (cell: any) => {
+        console.log('SelectFormatter called');
         const thisRef = this;
         const tmpAnchor = document.createElement('a');
         tmpAnchor.href = '#';
@@ -245,7 +254,9 @@ class CalloutControlComponent extends React.Component<iPropsInput> {
         };
         return tmpAnchor;
     };
+
     LoadData = (selectedViewId: number) => {
+        console.log('LoadData called');
         const thisRef = this;
         this._SearchText = (document.getElementById(this._txtSearchId) as HTMLInputElement).value ?? '';
         if (this._tmpField.exterCall) {
@@ -276,6 +287,7 @@ class CalloutControlComponent extends React.Component<iPropsInput> {
     };
 
     LoadDataFromFetchXML = (selectedViewId: number) => {
+        console.log('LoadDataFromFetchXML called');
         const thisref = this;
         if (this._tmpField?.lookUpCol?.views) {
             let fetchXml = this._tmpField?.lookUpCol?.views[selectedViewId]?.fetchXml ?? '';
@@ -309,6 +321,7 @@ class CalloutControlComponent extends React.Component<iPropsInput> {
         }
     };
     LoadDataFromNonFetchXML = () => {
+        console.log('LoadDataFromNonFetchXML called');
         const tmpSearchText = (document.getElementById(this._txtSearchId) as HTMLInputElement).value ?? '';
 
         let tmpSelect = '?$select=';
@@ -353,6 +366,7 @@ class CalloutControlComponent extends React.Component<iPropsInput> {
     };
 
     PopulateData = (result: any) => {
+        console.log('PopulateData called');
         const tmpData = [];
         for (let i = 0; i < result.entities.length; i++) {
             const tmpItem: any = {};
@@ -370,12 +384,15 @@ class CalloutControlComponent extends React.Component<iPropsInput> {
     };
 
     OpenCallOut = () => {
+        console.log('OpenCallOut called');
         this.setState({ calloutVisible: true });
     };
     CloseCallOut = () => {
+        console.log('CloseCallOut called');
         this.setState({ calloutVisible: false });
     };
     componentDidMount = () => {
+        console.log('componentDidMount called');
         const thisref = this;
         if (this._tmpField.openSearchPanelOnKeyDown) {
             const txtSearchBox = document.getElementById(this._txtSearchId);
@@ -388,8 +405,9 @@ class CalloutControlComponent extends React.Component<iPropsInput> {
         }
         this.LoadInitialData();
     };
-
+    // Haltepunkt ausgelöst beim öffnen aber auch bei select!
     componentDidUpdate = () => {
+        console.log('componentDidUpdate called');
         this.SetLookupText();
     };
 
@@ -418,6 +436,7 @@ class CalloutControlComponent extends React.Component<iPropsInput> {
     };
 
     OnSearchClick = () => {
+        console.log('OnSearchClick called');
         this.setState({ data: [], showSpinner: true });
         this.OpenCallOut();
         const ddlView = document.getElementById(this._ddlView) as HTMLSelectElement;
@@ -425,6 +444,7 @@ class CalloutControlComponent extends React.Component<iPropsInput> {
     };
 
     SetEditability = (boolEditable: boolean) => {
+        console.log('SetEditability called');
         const divLookup = document.getElementById(this._divLookupId);
         const divTextbox = document.getElementById(this._divTextbox);
         const divValidations = document.getElementById(this._divValidations);
@@ -445,16 +465,19 @@ class CalloutControlComponent extends React.Component<iPropsInput> {
     };
 
     SetLookupText = () => {
+        console.log('SetLookupText called');
         const linkLookupText = document.getElementById(this._linkLookupText);
         if (linkLookupText) linkLookupText.innerText = this.state.lookupText ?? '';
     };
     OnViewChange = () => {
+        console.log('OnViewChange called');
         this.setState({ data: [], showSpinner: true });
         const ddlView = document.getElementById(this._ddlView) as HTMLSelectElement;
         this.setState({ selectedView: Number.parseInt(ddlView.value) });
         this.LoadData(Number.parseInt(ddlView.value));
     };
     OnNewClick = () => {
+        console.log('OnNewClick called');
         const thisRef = this;
         this._context.navigation
             .openForm({
@@ -487,6 +510,7 @@ class CalloutControlComponent extends React.Component<iPropsInput> {
             );
     };
     OnTextClick = (e: any) => {
+        console.log('OnTextClick called');
         e.preventDefault();
         if (this._tmpField.lookUpCol?.pageUrl) {
             const tmpLink = this._tmpField.lookUpCol?.pageUrl + this._entityId;
@@ -681,8 +705,8 @@ class CalloutControlComponent extends React.Component<iPropsInput> {
                                                                                         className='tdSpinner'
                                                                                     >
                                                                                         <Oval
-                                                                                            height={80}
-                                                                                            width={80}
+                                                                                            height={20}
+                                                                                            width={20}
                                                                                             color='#4fa94d'
                                                                                             wrapperStyle={{}}
                                                                                             wrapperClass=''

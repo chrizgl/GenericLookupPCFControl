@@ -1,0 +1,49 @@
+{
+    "name": "cgsol_asn_childpart",
+    "openSearchPanelOnKeyDown": true,
+    "recordsThreshHoldLimit": 5000,
+    "newRecordText": "Create New Part",
+    "focusControl": "focusControl1",
+    "entitySymbol": "cgsol_Part",
+    "lookUpCol": {
+        "entity": "cgsol_part",
+        "schemaName": "cgsol_asn_childpart",
+        "pageUrl": "",
+        "primaryKey": "cgsol_partid", // Primary Key of the looked up entity
+        "primaryFeild": "currencyname", // Primay Key Name
+        // Fields by which filter needs be performed (OR condition)
+        "fitlerTextFields": [
+            {
+                "name": "currencyname",
+                "displayText": "Currency Name"
+            }
+        ],
+        // Fields to show in results set
+        "fieldsToShow": [
+            {
+                "name": "currencyname",
+                "displayText": "Currency Name"
+            },
+            {
+                "name": "isocurrencycode",
+                "displayText": "Currency Code"
+            },
+            {
+                "name": "currencysymbol",
+                "displayText": "Currency Symbol"
+            }
+        ],
+        // Views. First one be default. For fetchXML, have the required FETCHXML and add <MORECONDITIONS/> at the end of the filter which will be replaced dynamically
+        "views": [
+            {
+                "id": 0,
+                "name": "All Currencies"
+            },
+            {
+                "id": 1,
+                "name": "Active Currencies",
+                "fetchXml": "<?xml version='1.0'?><fetch version='1.0' output-format='xml-platform' mapping='logical' distinct='false'><entity name='transactioncurrency'><attribute name='transactioncurrencyid'/><attribute name='currencyname'/><attribute name='isocurrencycode'/><attribute name='currencysymbol'/><attribute name='exchangerate'/><attribute name='currencyprecision'/><order attribute='currencyname' descending='false'/><filter type='and'><condition attribute='statecode' operator='eq' value='0'/><MORECONDITIONS/></filter></entity></fetch>"
+            }
+        ]
+    }
+}
